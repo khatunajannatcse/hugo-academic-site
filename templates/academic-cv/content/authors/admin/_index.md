@@ -1,9 +1,12 @@
 ---
+# Display name
 title: "Khatun-A-Jannat"
+
+# Role / Position
 role: "MSc Student in Computer Science & Engineering"
 
-# Bio summary shown on the homepage
-bio: "My research interests include blockchain applications, supply chain security, and database management systems."
+# Short bio tagline
+bio: "MSc student in CSE specializing in blockchain applications for supply chain security, counterfeit product detection, and database management systems."
 
 # Social Links
 social:
@@ -19,11 +22,20 @@ social:
 
 # Research Interests
 interests:
-  - Blockchain & Supply Chain Security
-  - Database Management Systems
+  - Blockchain Technology & Supply Chain Security
+  - Counterfeit Product Detection
+  - Database Management Systems (DBMS)
   - Software Engineering
+
+# Education
+education:
+  courses:
+    - course: MSc in Computer Science and Engineering
+      institution: Department of Computer Science & Engineering
 ---
 
 ## Biography
 
-Write a short overview of your academic background, current research work, or goals here.
+I am a Master of Science (MSc) student in Computer Science and Engineering. My primary research focuses on leveraging **blockchain technology for supply chain security and counterfeit product authentication**, specifically developing verifiable tracking mechanisms for sensitive consumer products such as formula milk and packaged infant foods. 
+
+Alongside my work in decentralized security systems, I have strong research interests in **Database Management Systems (DBMS)**, focusing on core architecture, memory structures, and database optimization.

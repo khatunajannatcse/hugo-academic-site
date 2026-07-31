@@ -1,1 +1,34 @@
-name: Deploy Hugo site to Pages`non: `n  push:`n    branches: ["main"]`npermissions:`n  contents: read`n  pages: write`n  id-token: write`njobs:`n  build:`n    runs-on: ubuntu-latest`n    steps:`n      - uses: actions/checkout@v4`n        with:`n          submodules: true`n          fetch-depth: 0`n      - uses: hugomods/hugo@v0`n        with:`n          hugo-version: "latest"`n          extended: true`n      - name: Build with Hugo`n        run: hugo --gc --minify`n      - uses: actions/upload-pages-artifact@v3`n        with:`n          path: ./public`n  deploy:`n    environment:`n      name: github-pages`n      url: ${{ steps.deployment.outputs.page_url }}`n    runs-on: ubuntu-latest`n    needs: build`n    steps:`n      - id: deployment`n        uses: actions/deploy-pages@v4
+name: Deploy Hugo site to Pages
+on:
+  push:
+    branches: ["main"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+      - uses: hugomods/hugo@v0
+        with:
+          hugo-version: 'latest'
+          extended: true
+      - name: Build with Hugo
+        run: hugo --gc --minify
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
